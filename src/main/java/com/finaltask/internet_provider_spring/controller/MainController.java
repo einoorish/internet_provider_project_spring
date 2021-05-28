@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.finaltask.internet_provider_spring.domain.TariffType;
@@ -17,19 +18,12 @@ public class MainController {
 	private UserRepo userRepo;
 	@Autowired
 	private TariffRepo tariffRepo;
-
+	
 	@GetMapping("/")
-	public String home(Model model) {
-		model.addAttribute("title", "Main page");
-		model.addAttribute("tariffs", tariffRepo.findAll());
-		return "home";
-	}
-	
-	@PostMapping("filter")
-	public String filter(@RequestParam String type, Model model) {
+	public String home(@RequestParam(name="type", required=false, defaultValue="INTERNET") String type, Model model) {
+		model.addAttribute("title", "Home");
 		model.addAttribute("tariffs", tariffRepo.findByType(TariffType.valueOf(type)));
-		
 		return "home";
 	}
-	
+
 }

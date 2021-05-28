@@ -7,10 +7,10 @@
     
     <div class="row">
         <div class="col-2 p-0 bg-secondary position-fixed">
-          <a class="btn btn-dark btn-block m-0" href="#"><@spring.message "menu.type.phone"/></a>  
-		  <a class="btn btn-dark btn-block m-0" href="#"><@spring.message "menu.type.internet"/></a>
-		  <a class="btn btn-dark btn-block m-0" href="#"><@spring.message "menu.type.cable"/></a>
-		  <a class="btn btn-dark btn-block m-0" href="#"><@spring.message "menu.type.ip_tv"/></a>
+          <a class="btn btn-dark btn-block m-0" href="?type=PHONE"><@spring.message "menu.type.phone"/></a>  
+		  <a class="btn btn-dark btn-block m-0" href="?type=INTERNET"><@spring.message "menu.type.internet"/></a>
+		  <a class="btn btn-dark btn-block m-0" href="?type=CABLE"><@spring.message "menu.type.cable"/></a>
+		  <a class="btn btn-dark btn-block m-0" href="?type=IP_TV"><@spring.message "menu.type.ip_tv"/></a>
     	</div>
     	<a class="col-2 btn btn-dark btn-block m-0 fixed-bottom text-white"><@spring.message "menu.download"/></a>  
     

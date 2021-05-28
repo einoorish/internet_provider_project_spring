@@ -23,8 +23,7 @@
     </head>
 	<body class="bg-secondary">
 	    <#include "navbar.ftl">
-	    
-	        <#nested>
+	    <#nested>
     </body>
     </html>
 </#macro>

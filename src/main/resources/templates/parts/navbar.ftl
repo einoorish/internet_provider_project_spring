@@ -1,5 +1,4 @@
 <#include "security.ftl">
-<#import "login.ftl" as l>
 <#import "/spring.ftl" as spring />
 
 <nav class="navbar navbar-light bg-dark">
