@@ -2,10 +2,27 @@
 <html xmlns:th="http://thymeleaf.org">
 <head>
 	<title th:text="${title}"></title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
 </head>
 
-<body>
+<body class="bg-secondary">
 	<p th:text="'Hello, ' + ${title} + '.'"/>
+	
+	<table>
+		<thead>
+	        <tr>
+	            <th> Login </th>
+	            <th> Role </th>
+	            <th> Funds </th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr th:each="user : ${users}">
+	            <td><span th:text="${user.login}"> Login </span></td>
+	            <td><span th:text="${user.role}"> Role </span></td>
+	            <td><span th:text="${user.funds}"> Funds </span></td>
+	        </tr>
+	    </tbody>
+    </table>
 </body>
 </html>
