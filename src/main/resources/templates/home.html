@@ -7,20 +7,21 @@
 
 <body class="bg-secondary">
 	<p th:text="'Hello, ' + ${title} + '.'"/>
-	
+	<form method="post" action="filter">
+		<input type="text" name="type"/>
+		<button type="submit">Find By Type</button>		
+	</form>
 	<table>
 		<thead>
 	        <tr>
-	            <th> Login </th>
-	            <th> Role </th>
-	            <th> Funds </th>
+	            <th> Title </th>
+	            <th> Price </th>
 	        </tr>
 	    </thead>
 	    <tbody>
-	        <tr th:each="user : ${users}">
-	            <td><span th:text="${user.login}"> Login </span></td>
-	            <td><span th:text="${user.role}"> Role </span></td>
-	            <td><span th:text="${user.funds}"> Funds </span></td>
+	        <tr th:each="tariff : ${tariffs}">
+	            <td><span th:text="${tariff.title}"> Title </span></td>
+	            <td><span th:text="${tariff.price}"> Price </span></td>
 	        </tr>
 	    </tbody>
     </table>
