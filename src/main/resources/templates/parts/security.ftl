@@ -5,6 +5,6 @@
     login = user.getLogin()
     role = user.getRole()>
 <#else>
-    <#assign login = "unknown"
+    <#assign login = "none"
     role = "GUEST">
 </#if>

@@ -1,6 +1,8 @@
 package com.finaltask.internet_provider_spring.domain;
 
 import java.math.BigDecimal;
+import java.util.Collection;
+import java.util.Collections;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,10 +11,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 @Entity
-public class User {
+public class User implements UserDetails {
 	 @Id
-	    @GeneratedValue(strategy = GenerationType.AUTO)
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private long id;
 
 	    private String login;
@@ -101,6 +106,36 @@ public class User {
 
 		public void setFunds(BigDecimal funds) {
 			this.funds = funds;
+		}
+
+		@Override
+		public Collection<? extends GrantedAuthority> getAuthorities() {
+	        return Collections.singleton(role);
+		}
+
+		@Override
+		public String getUsername() {
+			return getLogin();
+		}
+
+		@Override
+		public boolean isAccountNonExpired() {
+			return true;
+		}
+
+		@Override
+		public boolean isAccountNonLocked() {
+			return true;
+		}
+
+		@Override
+		public boolean isCredentialsNonExpired() {
+			return true;
+		}
+
+		@Override
+		public boolean isEnabled() {
+			return true;
 		}
 
 	    
